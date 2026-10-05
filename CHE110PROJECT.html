@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Waste Management Platform</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f4f9f4; color: #333; }
+        header { background-color: #2e7d32; color: white; padding: 15px; text-align: center; border-radius: 8px; }
+        .container { max-width: 800px; margin: 20px auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h2 { color: #2e7d32; }
+        label { font-weight: bold; display: block; margin-top: 10px; }
+        input, select, textarea, button { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+        button { background-color: #2e7d32; color: white; font-weight: bold; border: none; margin-top: 15px; cursor: pointer; }
+        button:hover { background-color: #1b5e20; }
+        .success-msg { margin-top: 15px; padding: 10px; background-color: #d4edda; color: #155724; border-radius: 5px; display: none; }
+        .center-list { margin-top: 20px; }
+        .center-item { background: #e8f5e9; padding: 10px; margin-bottom: 8px; border-left: 5px solid #2e7d32; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>E-Waste Collection & Management Platform</h1>
+    <p>Dispose of your electronic waste safely and sustainably</p>
+</header>
+
+<div class="container">
+    <h2>Schedule E-Waste Pickup</h2>
+    <form id="pickupForm">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" required placeholder="Enter your name">
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" required placeholder="Enter phone number">
+
+        <label for="category">E-Waste Category:</label>
+        <select id="category" required>
+            <option value="">Select Category</option>
+            <option value="Mobile/Laptops">Mobiles & Laptops</option>
+            <option value="Home Appliances">Home Appliances (Fridge, TV, etc.)</option>
+            <option value="Batteries/Wires">Batteries, Chargers & Wires</option>
+            <option value="Computer Peripherals">Keyboards, Mouse, Monitors</option>
+        </select>
+
+        <label for="address">Pickup Address:</label>
+        <textarea id="address" rows="3" required placeholder="Enter complete address"></textarea>
+
+        <button type="submit">Submit Pickup Request</button>
+    </form>
+    <div id="successMsg" class="success-msg">Pickup Request Submitted Successfully! Our team will contact you soon.</div>
+
+    <hr style="margin-top: 30px;">
+
+    <h2>Nearby Collection Centers</h2>
+    <div class="center-list">
+        <div class="center-item">
+            <strong>GreenRecycle Hub - Center 1</strong><br>
+            Location: Campus Block 3, Main Avenue<br>
+            Timings: 9:00 AM - 5:00 PM
+        </div>
+        <div class="center-item">
+            <strong>E-Clean Processing Unit - Center 2</strong><br>
+            Location: Tech Park Road, Sector 4<br>
+            Timings: 10:00 AM - 6:00 PM
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('pickupForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.getElementById('successMsg').style.display = 'block';
+        this.reset();
+    });
+</script>
+
+</body>
+</html>
